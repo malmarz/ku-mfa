@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المصادقة متعددة العوامل (MFA) — جامعة الكويت</title>
+<meta name="description" content="Kuwait University MFA self-help: set up Microsoft Authenticator and fix common problems.">
+<link rel="icon" href="assets/ku-logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img src="assets/ku-logo-white.png" alt="Kuwait University — جامعة الكويت">
+    <h1>
+      <span class="ar">المصادقة متعددة العوامل (MFA)<small>دليل المساعدة الذاتية</small></span>
+      <span class="en">Multifactor Authentication (MFA)<small>Self-help guide</small></span>
+    </h1>
+    <button id="lang" class="lang-btn" type="button">
+      <span class="ar">English</span><span class="en">العربية</span>
+    </button>
+  </div>
+</header>
+
+<!-- EDIT: campaign date and audience -->
+<div class="deadline">
+  <div class="wrap">
+    <div class="ar">طلبة كلية الهندسة والبترول: المصادقة متعددة العوامل إلزامية اعتبارًا من 20 أكتوبر 2026
+      <span>فعّلها الآن. التفعيل يستغرق دقائق، وبدونه قد لا تتمكن من الدخول إلى أنظمة الجامعة وخدماتها.</span></div>
+    <div class="en">College of Engineering and Petroleum students: MFA is mandatory from 20 October 2026
+      <span>Set it up now. It takes a few minutes, and without it you may be unable to access university systems and services.</span></div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="ask">
+    <h2><span class="ar">ماذا تحتاج؟</span><span class="en">What do you need?</span></h2>
+    <input id="search" class="search" type="search" autocomplete="off"
+           data-ar="ابحث: هاتف جديد، إشعار، رمز…" data-en="Search: new phone, notification, code…"
+           aria-label="Search">
+    <p id="no-match" class="no-match" hidden>
+      <span class="ar">لا توجد نتيجة. جرّب كلمة أخرى، أو انتقل إلى «أحتاج مساعدة».</span>
+      <span class="en">No match. Try another word, or go to “I need help”.</span>
+    </p>
+  </section>
+
+  <div class="topics">
+
+    <!-- 1 ─────────────────────────────────────────────── SET UP -->
+    <details class="topic" id="setup" data-keys="setup register activate enroll تفعيل تسجيل اعداد">
+      <summary>
+        <span class="ico">📱</span>
+        <span class="t">
+          <b><span class="ar">أريد تفعيل MFA لأول مرة</span><span class="en">Set up MFA for the first time</span></b>
+          <i><span class="ar">بالهاتف فقط، أو بالهاتف والحاسوب</span><span class="en">Phone only, or phone and computer</span></i>
+        </span>
+        <span class="chev">›</span>
+      </summary>
+      <div class="body">
+
+        <h3><span class="ar">قبل أن تبدأ</span><span class="en">Before you start</span></h3>
+        <ul class="ar">
+          <li>ثبّت تطبيق <span class="ui">Microsoft Authenticator</span> على هاتفك، وحدّثه إلى آخر إصدار.</li>
+          <li>اتصال بالإنترنت على الهاتف.</li>
+          <li>اسمح للتطبيق بإرسال الإشعارات.</li>
+          <li>قفل شاشة على الهاتف (رمز، بصمة، أو وجه).</li>
+          <li>اسم المستخدم وكلمة المرور لحسابك الجامعي.</li>
+        </ul>
+        <ul class="en">
+          <li>Install <span class="ui">Microsoft Authenticator</span> on your phone and update it to the latest version.</li>
+          <li>Internet connection on the phone.</li>
+          <li>Allow the app to send notifications.</li>
+          <li>A screen lock on the phone (passcode, fingerprint or face).</li>
+          <li>Your university username and password.</li>
+        </ul>
+        <div class="row">
+          <a class="btn light" href="https://apps.apple.com/app/microsoft-authenticator/id983156458" target="_blank" rel="noopener">iPhone — App Store</a>
+          <a class="btn light" href="https://play.google.com/store/apps/details?id=com.azure.authenticator" target="_blank" rel="noopener">Android — Google Play</a>
+        </div>
+
+        <h3><span class="ar">اختر طريقتك</span><span class="en">Choose your way</span></h3>
+
+        <details class="pick" id="setup-phone">
+          <summary>
+            <span><span class="ar">معي الهاتف فقط</span><span class="en">I only have my phone</span>
+            <small><span class="ar"> — لا يلزم حاسوب</span><span class="en"> — no computer needed</span></small></span>
+          </summary>
+          <div class="in">
+            <ol class="steps ar">
+              <li>افتح تطبيق <span class="ui">Microsoft Authenticator</span>.</li>
+              <li>اضغط علامة <span class="ui">+</span> لإضافة حساب.</li>
+              <li>اختر <span class="ui">Work or school account</span> (حساب العمل أو المؤسسة التعليمية).</li>
+              <li>اختر <span class="ui">Sign in</span> (تسجيل الدخول).</li>
+              <li>أدخل بريدك الجامعي وكلمة المرور.</li>
+              <li>اتبع التعليمات الظاهرة على الشاشة حتى نهايتها.</li>
+              <li>عند النجاح يظهر حسابك الجامعي داخل التطبيق.</li>
+            </ol>
+            <ol class="steps en">
+              <li>Open <span class="ui">Microsoft Authenticator</span>.</li>
+              <li>Tap <span class="ui">+</span> to add an account.</li>
+              <li>Choose <span class="ui">Work or school account</span>.</li>
+              <li>Choose <span class="ui">Sign in</span>.</li>
+              <li>Enter your university email and password.</li>
+              <li>Follow the on-screen instructions to the end.</li>
+              <li>When it succeeds, your university account appears in the app.</li>
+            </ol>
+            <div class="note">
+              <span class="ar">ظهر لك رمز QR على الهاتف نفسه ولا تستطيع مسحه؟ اختر <span class="ui">Can’t scan the image</span> أو الإعداد اليدوي. إن لم يظهر هذا الخيار فاستخدم طريقة «الهاتف والحاسوب».</span>
+              <span class="en">A QR code appeared on the same phone and you cannot scan it? Choose <span class="ui">Can’t scan the image</span> or manual setup. If that option is not shown, use the “phone and computer” way.</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="pick" id="setup-computer">
+          <summary>
+            <span><span class="ar">معي الهاتف والحاسوب</span><span class="en">I have my phone and a computer</span>
+            <small><span class="ar"> — الأسهل</span><span class="en"> — easiest</span></small></span>
+          </summary>
+          <div class="in">
+            <ol class="steps ar">
+              <li>على الحاسوب: سجّل الدخول إلى حسابك الجامعي.</li>
+              <li>إذا ظهرت رسالة <span class="ui">More information required</span> أو <span class="ui">Keep your account secure</span> فاضغط <span class="ui">Next</span>.
+                <br>لم تظهر؟ افتح <a href="https://mysignins.microsoft.com/security-info" target="_blank" rel="noopener">صفحة Security info</a> ثم <span class="ui">Add sign-in method</span> ثم <span class="ui">Microsoft Authenticator</span>.</li>
+              <li>اضغط <span class="ui">Next</span> حتى يظهر رمز QR على شاشة الحاسوب.</li>
+              <li>على الهاتف: افتح <span class="ui">Microsoft Authenticator</span> واضغط <span class="ui">+</span>.</li>
+              <li>اختر <span class="ui">Work or school account</span> ثم <span class="ui">Scan a QR code</span>.</li>
+              <li>وجّه كاميرا الهاتف إلى رمز QR على الحاسوب.</li>
+              <li>على الحاسوب: اضغط <span class="ui">Next</span>. يصلك طلب تجريبي على الهاتف.</li>
+              <li>على الهاتف: أدخل الرقم الظاهر على شاشة الحاسوب ووافق.</li>
+              <li>على الحاسوب: أكمل التعليمات حتى تظهر رسالة النجاح.</li>
+            </ol>
+            <ol class="steps en">
+              <li>On the computer: sign in to your university account.</li>
+              <li>If you see <span class="ui">More information required</span> or <span class="ui">Keep your account secure</span>, select <span class="ui">Next</span>.
+                <br>Not shown? Open the <a href="https://mysignins.microsoft.com/security-info" target="_blank" rel="noopener">Security info page</a>, then <span class="ui">Add sign-in method</span>, then <span class="ui">Microsoft Authenticator</span>.</li>
+              <li>Select <span class="ui">Next</span> until a QR code appears on the computer screen.</li>
+              <li>On the phone: open <span class="ui">Microsoft Authenticator</span> and tap <span class="ui">+</span>.</li>
+              <li>Choose <span class="ui">Work or school account</span>, then <span class="ui">Scan a QR code</span>.</li>
+              <li>Point the phone camera at the QR code on the computer.</li>
+              <li>On the computer: select <span class="ui">Next</span>. A test request reaches your phone.</li>
+              <li>On the phone: enter the number shown on the computer screen and approve.</li>
+              <li>On the computer: finish the instructions until you see the success message.</li>
+            </ol>
+          </div>
+        </details>
+
+        <div class="ok">
+          <span class="ar"><b>انتهيت.</b> لا تحذف التطبيق ولا تحذف الحساب منه. ستحتاجه عند تسجيل الدخول.</span>
+          <span class="en"><b>Done.</b> Do not delete the app or remove the account from it. You will need it when you sign in.</span>
+        </div>
+
+        <!-- EDIT: videos. KU IT Security channel; both show the phone + computer way -->
+        <h3><span class="ar">تفضّل المشاهدة؟</span><span class="en">Prefer to watch?</span></h3>
+        <div class="row">
+          <a class="btn light ar" href="https://www.youtube.com/watch?v=D0D8TdIWqCk" target="_blank" rel="noopener">▶ فيديو التفعيل (عربي)</a>
+          <a class="btn light en" href="https://www.youtube.com/watch?v=odKFLighXz8" target="_blank" rel="noopener">▶ Setup video (English)</a>
+        </div>
+
+        <button class="share" type="button"><span class="ar">نسخ رابط هذه الإجابة</span><span class="en">Copy link to this answer</span></button>
+      </div>
+    </details>
+
+    <!-- 2 ─────────────────────────────────────────────── APPROVE -->
+    <details class="topic" id="approve" data-keys="approve number matching sign in login موافقة رقم دخول">
+      <summary>
+        <span class="ico">✅</span>
+        <span class="t">
+          <b><span class="ar">يُطلب مني الموافقة أو يظهر لي رقم عند الدخول</span><span class="en">Sign-in asks me to approve or shows a number</span></b>
+          <i><span class="ar">كيف أوافق على تسجيل الدخول</span><span class="en">How to approve a sign-in</span></i>
+        </span>
+        <span class="chev">›</span>
+      </summary>
+      <div class="body">
+        <ol class="steps ar">
+          <li>أدخل اسم المستخدم وكلمة المرور كالمعتاد.</li>
+          <li>يظهر رقم على صفحة تسجيل الدخول.</li>
+          <li>افتح إشعار <span class="ui">Microsoft Authenticator</span> على هاتفك.</li>
+          <li>أدخل الرقم نفسه في التطبيق.</li>
+          <li>اضغط <span class="ui">Yes</span> أو <span class="ui">Approve</span>.</li>
+        </ol>
+        <ol class="steps en">
+          <li>Enter your username and password as usual.</li>
+          <li>A number appears on the sign-in page.</li>
+          <li>Open the <span class="ui">Microsoft Authenticator</span> notification on your phone.</li>
+          <li>Enter the same number in the app.</li>
+          <li>Tap <span class="ui">Yes</span> or <span class="ui">Approve</span>.</li>
+        </ol>
+        <div class="note">
+          <span class="ar">هذا الرقم يختلف عن الرمز المتغيّر ذي الست خانات داخل التطبيق. لا تحتاج إلى ذلك الرمز في الدخول المعتاد.</span>
+          <span class="en">This number is not the rotating six-digit code inside the app. You do not need that code for a normal sign-in.</span>
+        </div>
+        <p class="ar">رفضت الطلب بالخطأ؟ ابدأ تسجيل الدخول من جديد ووافق على الطلب الجديد.</p>
+        <p class="en">Denied it by mistake? Start the sign-in again and approve the new request.</p>
+        <button class="share" type="button"><span class="ar">نسخ رابط هذه الإجابة</span><span class="en">Copy link to this answer</span></button>
+      </div>
+    </details>
+
+    <!-- 3 ─────────────────────────────────────────────── NO NOTIFICATION -->
+    <details class="topic" id="no-notification" data-keys="notification not receiving push اشعار لا يصل تنبيه">
+      <summary>
+        <span class="ico">🔕</span>
+        <span class="t">
+          <b><span class="ar">لا يصلني الإشعار</span><span class="en">I am not getting the notification</span></b>
+          <i><span class="ar">ست نقاط للفحص</span><span class="en">Six things to check</span></i>
+        </span>
+        <span class="chev">›</span>
+      </summary>
+      <div class="body">
+        <p class="ar"><b>جرّب أولًا:</b> افتح تطبيق <span class="ui">Microsoft Authenticator</span> يدويًا. كثيرًا ما يظهر الطلب داخله.</p>
+        <p class="en"><b>Try first:</b> open <span class="ui">Microsoft Authenticator</span> manually. The request often shows inside the app.</p>
+        <ol class="steps ar">
+          <li>الهاتف متصل بالإنترنت.</li>
+          <li>الإشعارات مفعّلة للتطبيق من إعدادات الهاتف.</li>
+          <li>وضع توفير البطارية لا يوقف التطبيق.</li>
+          <li>التاريخ والوقت في الهاتف مضبوطان تلقائيًا.</li>
+          <li>التطبيق محدّث إلى آخر إصدار.</li>
+          <li>حسابك الجامعي ظاهر داخل التطبيق.</li>
+        </ol>
+        <ol class="steps en">
+          <li>The phone is connected to the internet.</li>
+          <li>Notifications are enabled for the app in phone settings.</li>
+          <li>Battery saver is not stopping the app.</li>
+          <li>Phone date and time are set automatically.</li>
+          <li>The app is updated to the latest version.</li>
+          <li>Your university account is shown inside the app.</li>
+        </ol>
+        <p class="ar">ما زالت المشكلة قائمة؟ انتقل إلى <a href="#help">أحتاج مساعدة</a>.</p>
+        <p class="en">Still not working? Go to <a href="#help">I need help</a>.</p>
+        <button class="share" type="button"><span class="ar">نسخ رابط هذه الإجابة</span><span class="en">Copy link to this answer</span></button>
+      </div>
+    </details>
+
+    <!-- 4 ─────────────────────────────────────────────── NEW PHONE -->
+    <details class="topic" id="new-phone" data-keys="new phone change sell replace هاتف جديد تغيير بيع جوال">
+      <summary>
+        <span class="ico">🔄</span>
+        <span class="t">
+          <b><span class="ar">غيّرت هاتفي أو سأغيّره</span><span class="en">I changed my phone, or I am about to</span></b>
+          <i><span class="ar">أضف الهاتف الجديد قبل مسح القديم</span><span class="en">Add the new phone before wiping the old one</span></i>
+        </span>
+        <span class="chev">›</span>
+      </summary>
+      <div class="body">
+        <div class="warn">
+          <span class="ar"><b>لا تمسح الهاتف القديم ولا تبعه قبل إتمام هذه الخطوات.</b> استرجاع النسخة الاحتياطية للتطبيق لا يكفي وحده للحساب الجامعي.</span>
+          <span class="en"><b>Do not wipe or sell the old phone before finishing these steps.</b> Restoring the app backup is not enough on its own for a university account.</span>
+        </div>
+        <ol class="steps ar">
+          <li>أبقِ التطبيق على الهاتف القديم مؤقتًا.</li>
+          <li>ثبّت <span class="ui">Microsoft Authenticator</span> على الهاتف الجديد.</li>
+          <li>افتح <a href="https://mysignins.microsoft.com/security-info" target="_blank" rel="noopener">صفحة Security info</a> ووافق على الدخول بالهاتف القديم.</li>
+          <li>اختر <span class="ui">Add sign-in method</span> ثم <span class="ui">Microsoft Authenticator</span>، وأضف الهاتف الجديد.</li>
+          <li>جرّب تسجيل الدخول بالهاتف الجديد.</li>
+          <li>بعد نجاح التجربة فقط: احذف الهاتف القديم من الصفحة نفسها.</li>
+        </ol>
+        <ol class="steps en">
+          <li>Keep the app on the old phone for now.</li>
+          <li>Install <span class="ui">Microsoft Authenticator</span> on the new phone.</li>
+          <li>Open the <a href="https://mysignins.microsoft.com/security-info" target="_blank" rel="noopener">Security info page</a> and approve the sign-in with the old phone.</li>
+          <li>Choose <span class="ui">Add sign-in method</span>, then <span class="ui">Microsoft Authenticator</span>, and add the new phone.</li>
+          <li>Test a sign-in with the new phone.</li>
+          <li>Only after the test works: delete the old phone on the same page.</li>
+        </ol>
+        <p class="ar">الهاتف القديم لم يعد معك؟ انتقل إلى <a href="#lost-phone">فقدت هاتفي</a>.</p>
+        <p class="en">Old phone already gone? Go to <a href="#lost-phone">I lost my phone</a>.</p>
+        <button class="share" type="button"><span class="ar">نسخ رابط هذه الإجابة</span><span class="en">Copy link to this answer</span></button>
+      </div>
+    </details>
+
+    <!-- 5 ─────────────────────────────────────────────── LOST PHONE -->
+    <details class="topic" id="lost-phone" data-keys="lost stolen broken damaged locked out فقدت مسروق تالف معطل لا استطيع الدخول">
+      <summary>
+        <span class="ico">🆘</span>
+        <span class="t">
+          <b><span class="ar">فقدت هاتفي أو تعطّل ولا أستطيع الدخول</span><span class="en">My phone is lost or broken and I cannot sign in</span></b>
+          <i><span class="ar">استعادة الدخول إلى الحساب</span><span class="en">Getting back into your account</span></i>
+        </span>
+        <span class="chev">›</span>
+      </summary>
+      <div class="body">
+        <details class="pick" open>
+          <summary><span><span class="ar">لديّ طريقة دخول أخرى مسجّلة</span><span class="en">I have another registered sign-in method</span></span></summary>
+          <div class="in">
+            <ol class="steps ar">
+              <li>افتح <a href="https://mysignins.microsoft.com/security-info" target="_blank" rel="noopener">صفحة Security info</a> وادخل بالطريقة الأخرى.</li>
+              <li>أضف <span class="ui">Microsoft Authenticator</span> على هاتفك الجديد.</li>
+              <li>احذف الهاتف المفقود من القائمة.</li>
+            </ol>
+            <ol class="steps en">
+              <li>Open the <a href="https://mysignins.microsoft.com/security-info" target="_blank" rel="noopener">Security info page</a> and sign in with the other method.</li>
+              <li>Add <span class="ui">Microsoft Authenticator</span> on your new phone.</li>
+              <li>Delete the lost phone from the list.</li>
+            </ol>
+          </div>
+        </details>
+        <details class="pick">
+          <summary><span><span class="ar">ليست لديّ أي طريقة أخرى</span><span class="en">I have no other method</span></span></summary>
+          <div class="in">
+            <p class="ar">لا يمكن استعادة الدخول ذاتيًا. تواصل مع الدعم، وسيُتحقق من هويتك قبل إعادة ضبط الحساب. انتقل إلى <a href="#help">أحتاج مساعدة</a>.</p>
+            <p class="en">You cannot recover access by yourself. Contact support; your identity is verified before the account is reset. Go to <a href="#help">I need help</a>.</p>
+          </div>
+        </details>
+        <div class="warn">
+          <span class="ar">هاتفك مسروق؟ غيّر كلمة المرور الجامعية فور استعادة الدخول.</span>
+          <span class="en">Phone stolen? Change your university password as soon as you are back in.</span>
+        </div>
+        <button class="share" type="button"><span class="ar">نسخ رابط هذه الإجابة</span><span class="en">Copy link to this answer</span></button>
+      </div>
+    </details>
+
+    <!-- 6 ─────────────────────────────────────────────── UNEXPECTED REQUEST -->
+    <details class="topic" id="not-me" data-keys="unexpected did not request hacked suspicious phishing deny لم اطلب اختراق مشبوه احتيال رفض">
+      <summary>
+        <span class="ico">⚠️</span>
+        <span class="t">
+          <b><span class="ar">وصلني طلب موافقة لم أطلبه</span><span class="en">I got an approval request I did not make</span></b>
+          <i><span class="ar">لا توافق</span><span class="en">Do not approve</span></i>
+        </span>
+        <span class="chev">›</span>
+      </summary>
+      <div class="body">
+        <div class="note stop">
+          <span class="ar"><b>لا توافق.</b> طلب لم تبدأه أنت يعني أن شخصًا آخر يعرف كلمة مرورك.</span>
+          <span class="en"><b>Do not approve.</b> A request you did not start means someone else knows your password.</span>
+        </div>
+        <ol class="steps ar">
+          <li>اضغط <span class="ui">Deny</span>.</li>
+          <li>غيّر كلمة مرورك الجامعية فورًا.</li>
+          <li>أبلغ الدعم الفني.</li>
+        </ol>
+        <ol class="steps en">
+          <li>Tap <span class="ui">Deny</span>.</li>
+          <li>Change your university password immediately.</li>
+          <li>Report it to technical support.</li>
+        </ol>
+        <h3><span class="ar">لن يطلب منك موظفو الجامعة أبدًا</span><span class="en">University staff will never ask you to</span></h3>
+        <ul class="ar">
+          <li>الموافقة على طلب لم تبدأه.</li>
+          <li>مشاركة رمز المصادقة أو الرقم الظاهر على الشاشة.</li>
+          <li>مشاركة كلمة المرور.</li>
+        </ul>
+        <ul class="en">
+          <li>Approve a request you did not start.</li>
+          <li>Share an authentication code or the number on the screen.</li>
+          <li>Share your password.</li>
+        </ul>
+        <button class="share" type="button"><span class="ar">نسخ رابط هذه الإجابة</span><span class="en">Copy link to this answer</span></button>
+      </div>
+    </details>
+
+    <!-- 7 ─────────────────────────────────────────────── QUICK ANSWERS -->
+    <details class="topic" id="faq" data-keys="faq questions laptop passcode code already registered postpone اسئلة لابتوب حاسوب رمز تاجيل">
+      <summary>
+        <span class="ico">❓</span>
+        <span class="t">
+          <b><span class="ar">أسئلة سريعة</span><span class="en">Quick answers</span></b>
+          <i><span class="ar">هل أحتاج حاسوبًا؟ هل الرمز إلزامي؟</span><span class="en">Do I need a laptop? Is a passcode required?</span></i>
+        </span>
+        <span class="chev">›</span>
+      </summary>
+      <div class="body">
+
+        <details class="pick">
+          <summary><span><span class="ar">هل أحتاج إلى حاسوب؟</span><span class="en">Do I need a laptop or computer?</span></span></summary>
+          <div class="in">
+            <p class="ar"><b>لا.</b> يمكنك التفعيل من الهاتف فقط. استخدام الحاسوب مع الهاتف أسهل إن توفّر.</p>
+            <p class="en"><b>No.</b> You can set up from your phone alone. Using a computer with the phone is easier if you have one.</p>
+          </div>
+        </details>
+
+        <details class="pick">
+          <summary><span><span class="ar">هل قفل الشاشة إلزامي؟</span><span class="en">Is a screen lock required?</span></span></summary>
+          <div class="in">
+            <p class="ar">يجب أن يكون لهاتفك قفل شاشة: رمز، بصمة، أو وجه. لا يلزم رمز إضافي خاص بالتطبيق.</p>
+            <p class="en">Your phone needs a screen lock: passcode, fingerprint or face. No extra app-specific code is needed.</p>
+          </div>
+        </details>
+
+        <details class="pick">
+          <summary><span><span class="ar">هل أُدخل رمزًا من ست خانات في كل مرة؟</span><span class="en">Do I enter a six-digit code every time?</span></span></summary>
+          <div class="in">
+            <p class="ar"><b>لا.</b> يصلك إشعار، وتُدخل الرقم الظاهر على صفحة الدخول ثم توافق.</p>
+            <p class="en"><b>No.</b> You get a notification, enter the number shown on the sign-in page, and approve.</p>
+          </div>
+        </details>
+
+        <details class="pick">
+          <summary><span><span class="ar">سبق أن فعّلت. هل أعيد التفعيل؟</span><span class="en">I already set it up. Do I do it again?</span></span></summary>
+          <div class="in">
+            <p class="ar"><b>لا.</b> إن كان التطبيق يعمل مع حسابك الجامعي فلا يلزمك شيء. للتأكد افتح <a href="https://mysignins.microsoft.com/security-info" target="_blank" rel="noopener">صفحة Security info</a>: إن ظهر <span class="ui">Microsoft Authenticator</span> في القائمة فأنت مفعّل.</p>
+            <p class="en"><b>No.</b> If the app works with your university account, nothing more is needed. To check, open the <a href="https://mysignins.microsoft.com/security-info" target="_blank" rel="noopener">Security info page</a>: if <span class="ui">Microsoft Authenticator</span> is listed, you are set.</p>
+          </div>
+        </details>
+
+        <details class="pick">
+          <summary><span><span class="ar">هل أستطيع التأجيل؟</span><span class="en">Can I postpone?</span></span></summary>
+          <div class="in">
+            <!-- EDIT: snooze numbers are deliberately left out until confirmed -->
+            <p class="ar">إن ظهر خيار <span class="ui">Not now</span> فيمكنك التأجيل مؤقتًا، وستعود الرسالة للظهور. لا تنتظر الموعد الإلزامي: فعّل الآن.</p>
+            <p class="en">If <span class="ui">Not now</span> is offered, you can postpone for a short time and the message will come back. Do not wait for the mandatory date: set it up now.</p>
+          </div>
+        </details>
+
+        <details class="pick">
+          <summary><span><span class="ar">لماذا تُطلب مني هذه الخطوة؟</span><span class="en">Why am I asked to do this?</span></span></summary>
+          <div class="in">
+            <p class="ar">لحماية حسابك. إن عُرفت كلمة مرورك فلن يتمكن أحد من الدخول بدون هاتفك.</p>
+            <p class="en">To protect your account. If your password is ever known to someone else, they still cannot sign in without your phone.</p>
+          </div>
+        </details>
+
+        <button class="share" type="button"><span class="ar">نسخ رابط هذه الإجابة</span><span class="en">Copy link to this answer</span></button>
+      </div>
+    </details>
+
+    <!-- 8 ─────────────────────────────────────────────── HELP -->
+    <details class="topic" id="help" data-keys="help support contact whatsapp مساعدة دعم تواصل واتساب">
+      <summary>
+        <span class="ico">💬</span>
+        <span class="t">
+          <b><span class="ar">أحتاج مساعدة</span><span class="en">I need help</span></b>
+          <i><span class="ar">الطلبة، والموظفون وأعضاء هيئة التدريس</span><span class="en">Students, staff and faculty</span></i>
+        </span>
+        <span class="chev">›</span>
+      </summary>
+      <div class="body">
+        <!-- EDIT: support contacts, copied from cis.ku.edu.kw/services/mfa on 2026-10-08 -->
+        <h3><span class="ar">الطلبة</span><span class="en">Students</span></h3>
+        <p class="ar">راجع <b>مكتب التوجيه والإرشاد</b> في كليتك.</p>
+        <p class="en">Visit your college’s <b>Guidance &amp; Counseling Office</b>.</p>
+        <p class="ar">للحالات الطارئة فقط وخلال ساعات الدوام الرسمي، واتساب:</p>
+        <p class="en">Emergency cases only, during official working hours, WhatsApp:</p>
+        <p class="phones">24984051 &nbsp;·&nbsp; 24982884 &nbsp;·&nbsp; 24982845</p>
+
+        <h3><span class="ar">الموظفون وأعضاء هيئة التدريس</span><span class="en">Staff and faculty</span></h3>
+        <p class="ar">قدّم طلبًا عبر بوابة الخدمة الذاتية: <span class="ui">Electronic Security Services → Add MFA for User</span></p>
+        <p class="en">Submit a request through the self-service portal: <span class="ui">Electronic Security Services → Add MFA for User</span></p>
+        <a class="btn" href="https://supportme.ku.edu.kw" target="_blank" rel="noopener">supportme.ku.edu.kw</a>
+
+        <div class="warn">
+          <span class="ar">لا ترسل كلمة مرورك أو أي رمز إلى أحد، ولو قال إنه من الدعم الفني.</span>
+          <span class="en">Never send your password or any code to anyone, even if they say they are from technical support.</span>
+        </div>
+        <button class="share" type="button"><span class="ar">نسخ رابط هذه الإجابة</span><span class="en">Copy link to this answer</span></button>
+      </div>
+    </details>
+
+  </div>
+</main>
+
+<footer class="wrap">
+  <hr>
+  <p class="ar">هذه الصفحة لا تطلب منك اسم المستخدم أو كلمة المرور. أدخل بياناتك في صفحات جامعة الكويت و Microsoft فقط.</p>
+  <p class="en">This page never asks for your username or password. Enter your details only on Kuwait University and Microsoft pages.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
